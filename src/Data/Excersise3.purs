@@ -1,9 +1,9 @@
-module Data.AddressBook where
+module Data.Excersise3 where
 
 import Prelude
 
 import Control.Plus (empty)
-import Data.List (List(..), filter, head)
+import Data.List (List(..), filter, head, null)
 import Data.Maybe (Maybe)
 
 type Address =
@@ -38,8 +38,23 @@ findEntry firstName lastName = head <<< filter filterEntry
   filterEntry :: Entry -> Boolean
   filterEntry entry = entry.firstName == firstName && entry.lastName == lastName
 
+findEntryArr :: String -> String -> AddressBook -> AddressBook
+findEntryArr firstName lastName = filter filterEntry
+  where
+  filterEntry :: Entry -> Boolean
+  filterEntry entry = entry.firstName == firstName && entry.lastName == lastName
+
 findEntryuStreet :: String -> AddressBook -> Maybe Entry
 findEntryuStreet street = head <<< filter filterEntry
   where
   filterEntry :: Entry -> Boolean
   filterEntry entry = entry.address.street == street
+
+isNameExist :: String -> String -> AddressBook -> Boolean
+isNameExist firstName lastName book = 
+  if null book
+    then false
+    else 
+      if null (findEntryArr firstName lastName book)
+        then false
+        else true

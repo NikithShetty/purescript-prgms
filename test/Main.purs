@@ -3,8 +3,8 @@ module Test.Main where
 import Prelude
 
 import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, logShow)
-import Data.AddressBook
+import Control.Monad.Eff.Console (CONSOLE, logShow, log)
+import Data.Excersise3
 import Data.Maybe (Maybe)
 
 example :: Entry
@@ -42,9 +42,18 @@ main = do
     book1 = insertEntry example book0
     book2 = insertEntry example1 book1
 
-  logShow "printEntry \"John\" \"Smith\" book0 -- "
+  --retrieve record using name
+  log "printEntry \"John\" \"Smith\" book0"
   logShow $ printEntry "John" "Smith" book0
-  logShow "printEntry \"John\" \"Smith\" book1 -- "
+  log "printEntry \"John\" \"Smith\" book1"
   logShow $ printEntry "John" "Smith" book1
-  logShow "printEntryuStreet \"Fake St.\" book2 -- "
+
+  --retrieve record using street address
+  log "printEntryuStreet \"Fake St.\" book2"
   logShow $ printEntryuStreet "Fake St." book2
+
+  --check whether record exists
+  log "isNameExist 'John' 'Smith' book2"
+  logShow $ isNameExist "John" "Smith" book2
+
+
