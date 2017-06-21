@@ -1,4 +1,4 @@
-module Data.Excersise4 where
+module Data.Exercises4 where
 
 import Prelude
 import Data.Array (null, (..))

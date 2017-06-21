@@ -1,10 +1,10 @@
-module Test.Excersise4 where
+module Test.Exercises4 where
 
 import Prelude
 
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, logShow, log)
-import Data.Excersise4
+import Data.Exercises4
 import Data.Maybe (Maybe)
 
 arrA = [1,2,3]

@@ -1,4 +1,4 @@
-module Data.Excersise3 where
+module Data.Exercises3 where
 
 import Prelude
 
