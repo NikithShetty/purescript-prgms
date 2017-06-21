@@ -3,6 +3,7 @@ module Data.Excersise4 where
 import Prelude
 import Data.Array (null, (..))
 import Data.Array.Partial (tail, head)
+import Data.Foldable
 import Partial.Unsafe
 import Control.MonadZero (guard)
 
@@ -42,3 +43,10 @@ pyth n = do
 	k <- j .. n
 	guard $ i*i + j*j == k*k
 	[[i,j,k]]
+
+--reverse
+reverse :: forall a. Array a -> Array a
+reverse = foldr (\x xs -> xs <> [x]) []
+
+reverse' :: forall a. Array a -> Array a
+reverse' = foldl (\xs x -> [x] <> xs) []
