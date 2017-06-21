@@ -50,3 +50,7 @@ reverse = foldr (\x xs -> xs <> [x]) []
 
 reverse' :: forall a. Array a -> Array a
 reverse' = foldl (\xs x -> [x] <> xs) []
+
+--check whether all true in bool array
+isAllTrue :: Array Boolean -> Boolean
+isAllTrue = foldl (\ns n -> n && ns) true
