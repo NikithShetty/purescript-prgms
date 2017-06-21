@@ -27,8 +27,18 @@ isPrime n =
 		then true
 		else false
 
+--Cartesian Product of Arrays
 crossProd :: Array Int -> Array Int -> Array (Array Int)
 crossProd arrA arrB = do
 	i <- arrA
 	j <- arrB
 	[[i,j]]
+
+--Pythagorean triplets
+pyth :: Int -> Array (Array Int)
+pyth n = do
+	i <- 1 .. n
+	j <- i .. n
+	k <- j .. n
+	guard $ i*i + j*j == k*k
+	[[i,j,k]]

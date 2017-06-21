@@ -23,3 +23,6 @@ main = do
 	logShow arrB
 	log "crossProd arrA arrB"
 	logShow $ crossProd arrA arrB
+
+	log "pyth 5"
+	logShow $ pyth 5
