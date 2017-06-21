@@ -1,10 +1,10 @@
-module Test.Excersise3 where
+module Test.Exercises3 where
 
 import Prelude
 
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, logShow, log)
-import Data.Excersise3
+import Data.Exercises3
 import Data.Maybe (Maybe)
 
 example :: Entry
