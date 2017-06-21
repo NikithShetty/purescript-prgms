@@ -3,7 +3,7 @@ module Data.Excersise3 where
 import Prelude
 
 import Control.Plus (empty)
-import Data.List (List(..), filter, head, null)
+import Data.List (List(..), filter, head, null, nubBy)
 import Data.Maybe (Maybe)
 
 type Address =
@@ -58,3 +58,6 @@ isNameExist firstName lastName book =
       if null (findEntryArr firstName lastName book)
         then false
         else true
+
+removeDups :: AddressBook -> AddressBook
+removeDups book = nubBy (\a b -> a.firstName == b.firstName && a.lastName == b.lastName) book
