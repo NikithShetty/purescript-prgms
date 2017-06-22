@@ -3,6 +3,7 @@ module Data.Exercises5 where
 import Prelude
 
 import Control.MonadZero (guard)
+import Data.Maybe
 
 gcd' :: Int -> Int -> Int
 gcd' n 0 = n
@@ -63,3 +64,8 @@ scale (Line start (Point {x,y})) fac = (Line start (Point {x:x1, y:y1}))
 		x1 = x*fac
 		y1 = y*fac
 scale (Text loc text) fac = (Text loc text)
+
+getText :: Shape -> Maybe String
+getText s = case s of
+	(Text loc text) -> Just text
+	_ -> Nothing
