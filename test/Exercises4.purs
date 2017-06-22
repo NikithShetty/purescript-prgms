@@ -26,3 +26,6 @@ main = do
 
 	log "pyth 5"
 	logShow $ pyth 5
+
+	log "count [1,2,3,4,5,6,7,8,9,0]"
+	logShow $ count [1,2,3,4,5,6,7,8,9,0]

@@ -54,3 +54,21 @@ reverse' = foldl (\xs x -> [x] <> xs) []
 --check whether all true in bool array
 isAllTrue :: Array Boolean -> Boolean
 isAllTrue = foldl (\ns n -> n && ns) true
+
+length :: forall a. Array a -> Int
+length arr =
+  if null arr
+    then 0
+    else 1 + length (unsafePartial tail arr)
+
+
+--count even numbers in array
+count :: Array Int -> Int
+count arr = 
+	foldl check 0 arr
+	where
+		check :: Int -> Int -> Int
+		check sumv a = 
+			if (mod a 2) == 0
+				then (sumv + 1)
+				else sumv

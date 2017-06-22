@@ -32,6 +32,18 @@ p3 = {
 	}
 }
 
+point1 :: Point
+point1 = Point {
+	x : 1.2,
+	y : 2.2
+}
+
+centerCircle :: Shape
+centerCircle = Circle p n
+	where 
+		p = Point {x: 0.0, y: 0.0}
+		n = 10.0
+
 main :: Eff (console :: CONSOLE) Unit
 main = do
 
@@ -43,3 +55,12 @@ main = do
 
 	log "sameCity p1 p2"
 	logShow $ sameCity p1 p2
+
+	log "showPoint point1"
+	logShow $ showPoint point1
+
+	log "showShape centerCircle"
+	logShow $ showShape centerCircle
+
+	log "scale centerCircle 3.0"
+	logShow $ showShape $ scale centerCircle 3.0
