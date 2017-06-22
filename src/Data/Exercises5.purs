@@ -69,3 +69,9 @@ getText :: Shape -> Maybe String
 getText s = case s of
 	(Text loc text) -> Just text
 	_ -> Nothing
+
+--Vector Graphics Library
+type Picture = Array Shape
+
+showPicture :: Picture -> Array String
+showPicture = map showShape
